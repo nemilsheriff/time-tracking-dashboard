@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+      --Blue: hsl(246, 80%, 60%);
+      --Light-red: hsl(15, 100%, 70%);
+      /* work */
+      --Soft-blue: hsl(195, 74%, 62%);
+      /* (play) */
+      --Light-red-study: hsl(348, 100%, 68%);
+      /* (study) */
+      --Lime-green: hsl(145, 58%, 55%);
+      /* (exercise) */
+      --Violet: hsl(264, 64%, 52%);
+      /* (social)  */
+      --Soft-orange: hsl(43, 84%, 65%);
+      /* (self care) */
+      --Very-dark-blue: hsl(226, 43%, 10%);
+      --Dark-blue: hsl(235, 46%, 20%);
+      --Desaturated-blue: hsl(235, 45%, 61%);
+      --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Rubik', sans-serif;
+      background-color: var(--Very-dark-blue);
+}
+
+.container {
+      margin: 5rem 2rem;
+}
+
+.main-card {
+      background: var(--Dark-blue);
+      border-radius: 1rem;
+      margin-bottom: 1.5rem;
+      grid-area: main;
+}
+
+.profile-section {
+      background-color: var(--Blue);
+      display: flex;
+      padding: 1.5rem;
+      border-radius: 1rem;
+}
+
+.profile-section img {
+      border: 3px solid white;
+      border-radius: 50%;
+      width: 4rem;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.profile-details {
+      color: var(--Pale-Blue);
+      display: flex;
+      flex-direction: column;
+      margin-left: 1rem;
+      justify-content: center;
+}
+
+.profile-title {
+      font-size: 0.8rem;
+}
+
+.profile-name {
+      font-size: 1.3rem;
+}
+
+.frequency {
+      color: var(--Desaturated-blue);
+      display: flex;
+      justify-content: space-evenly;
+      padding: 1.5rem;
+}
+
+.frequency div {
+      cursor: pointer;
+}
+
+.frequency .selected {
+      color: var(--Pale-Blue);
+}
+
+.time-spent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.5rem;
+      padding-bottom: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+}
+
+.time-spent-current {
+      font-size: 1.25rem;
+}
+
+.time-spent-previous {
+      font-size: 0.8rem;
+}
+
+.heading-image {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+}
+
+.heading-image img {
+      align-self: center;
+}
+
+.card-image-heading {
+      height: 2.5rem;
+      border-top-right-radius: 1rem;
+      border-top-left-radius: 1rem;
+}
+
+.detail-card-group {
+      border-radius: 1rem;
+      margin-top: -12px;
+      z-index: 100;
+      background: var(--Dark-blue);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.detail-card {
+      color: var(--Pale-Blue);
+      margin-bottom: 1.5rem;
+}
+
+.work .card-image-heading {
+      background-color: var(--Light-red);
+      background-image: url(../images/icon-work.svg);
+      background-repeat: no-repeat;
+      background-position: top -5px right 10px;
+      background-size: 3.5rem;
+}
+
+.play .card-image-heading {
+      background-color: var(--Soft-blue);
+      background-image: url(../images/icon-play.svg);
+      background-repeat: no-repeat;
+      background-position: top -5px right 10px;
+      background-size: 3.5rem;
+}
+
+.study .card-image-heading {
+      background-color: var(--Light-red-study);
+      background-image: url(../images/icon-study.svg);
+      background-repeat: no-repeat;
+      background-position: top -5px right 10px;
+      background-size: 3.5rem;
+}
+
+.exercise .card-image-heading {
+      background-color: var(--Lime-green);
+      background-image: url(../images/icon-exercise.svg);
+      background-repeat: no-repeat;
+      background-position: top -5px right 10px;
+      background-size: 3.5rem;
+}
+
+.social .card-image-heading {
+      background-color: var(--Violet);
+      background-image: url(../images/icon-social.svg);
+      background-repeat: no-repeat;
+      background-position: top -5px right 10px;
+      background-size: 3.5rem;
+}
+
+.self-care .card-image-heading {
+      background-color: var(--Soft-orange);
+      background-image: url(../images/icon-self-care.svg);
+      background-repeat: no-repeat;
+      background-position: top -5px right 10px;
+      background-size: 3.5rem;
+}
+
+.work {
+      grid-area: work;
+}
+
+.play {
+      grid-area: play;
+}
+
+.study {
+      grid-area: study;
+}
+
+.exercise {
+      grid-area: exercise;
+}
+
+.social {
+      grid-area: social;
+}
+
+.self-care {
+      grid-area: selfcare;
+}
+
+@media screen and (min-width:1024px) {
+      body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+      }
+
+      .container {
+            /* outline: 1px solid white; */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            column-gap: 2rem;
+            grid-template-areas:
+                  "main work play study"
+                  "main exercise social selfcare";
+      }
+
+      .profile-section {
+            flex-direction: column;
+      }
+
+      .profile-section img {
+            width: 6rem;
+      }
+
+      .profile-details {
+            margin: 1rem 0 0rem 0;
+      }
+
+      .profile-name {
+            font-size: 2rem;
+      }
+
+      .frequency {
+            flex-direction: column;
+      }
+
+      .frequency div:nth-child(-n+2) {
+            padding-bottom: 1rem;
+      }
+
+      .main-card {
+            width: 250px;
+      }
+
+      .work {
+            width: 250px;
+      }
+
+      .play {
+            width: 250px;
+      }
+
+      .study {
+            width: 250px;
+      }
+
+      .exercise {
+            width: 250px;
+      }
+
+      .social {
+            width: 250px;
+      }
+
+      .self-care {
+            width: 250px;
+      }
+
+      .time-spent {
+            flex-direction: column;
+            align-items: flex-start;
+      }
+
+      .time-spent-current {
+            font-size: 2rem;
+            padding: 1rem 0;
+      }
+
+      .time-spent-previous {
+            padding-bottom: 1rem;
+      }
+}
