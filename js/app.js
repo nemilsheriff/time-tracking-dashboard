@@ -1,4 +1,4 @@
-fetch('../data.json')
+fetch('data.json')
       .then(response => response.json())
       .then(data => {
             const dailyLink = document.getElementById('daily');
@@ -30,11 +30,11 @@ fetch('../data.json')
                         let object = {};
                         object["title"] = item.title;
                         object["data"] = item.timeframes[frequency];
-                        console.log(object["data"]);
+                        // console.log(object["data"]);
                         dataToPrint.push(object);
                   })
                   dataToPrint.forEach(item => {
-                        console.log(item)
+                        // console.log(item)
                         updateTime(item.title, item.data.current, item.data.previous);
                   })
             }
@@ -72,4 +72,5 @@ fetch('../data.json')
             dailyLink.addEventListener('click', showDailyData);
             weeklyLink.addEventListener('click', showWeeklyData);
             monthlyLink.addEventListener('click', showMonthlyData);
-      });
+      })
+      .catch(err => console.log(err))
